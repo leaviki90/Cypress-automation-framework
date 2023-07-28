@@ -33,6 +33,6 @@ beforeEach(function() {
   });
   it("Should not be able to submit a successfull submission via contact us form as all fields are required", () => {
     //negative scenario
-    contact_Us_PO.contactForm_Submission(data.first_name, data.last_name, ' ', 'Hello from the other side!Again!', 'body', 'Error: Invalid email address')
+      contact_Us_PO.contactForm_Submission(data.first_name, data.last_name, ' ', 'Hello from the other side!Again!', 'body', 'Error: Invalid email address')
   });
 });
