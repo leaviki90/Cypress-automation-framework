@@ -11,7 +11,7 @@ pipeline {  //pipeline job
                         label "remote_node1"
                     }
                     steps {
-                        git url: 'https://github.com/leaviki90/cypress-automation-framework.git'
+                        git branch: 'main', git url: 'https://github.com/leaviki90/cypress-automation-framework.git'
                         bat 'npm install'
                         bat 'npm update'
                         bat 'npm run triggerAllTests-autostore-dashboard'
@@ -22,7 +22,7 @@ pipeline {  //pipeline job
                         label "remote_node2"
                     }
                     steps {
-                        git url: 'https://github.com/leaviki90/cypress-automation-framework.git'
+                        git branch: 'main', git url: 'https://github.com/leaviki90/cypress-automation-framework.git'
                         bat 'npm install'
                         bat 'npm update'
                         bat 'npm run triggerAllTests-autostore-dashboard'
