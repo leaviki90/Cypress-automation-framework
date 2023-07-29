@@ -11,10 +11,10 @@ pipeline {  //pipeline job
                         label "remote_node1"
                     }
                     steps {
-                        git branch: 'main', url: '%Script%'
+                        git branch: 'main', url: 'https://github.com/leaviki90/cypress-automation-framework.git'
                         bat 'npm install'
                         bat 'npm update'
-                        bat 'npm run triggerAllTests-autostore-dashboard'
+                        bat 'npm run %Script%'
                     }
                 }
                 stage('Slave Node2') {
@@ -22,10 +22,10 @@ pipeline {  //pipeline job
                         label "remote_node2"
                     }
                     steps {
-                        git branch: 'main', url: '%Script%'
+                        git branch: 'main', url: 'https://github.com/leaviki90/cypress-automation-framework.git'
                         bat 'npm install'
                         bat 'npm update'
-                        bat 'npm run triggerAllTests-autostore-dashboard'
+                        bat 'npm run %Script%'
                     }
                 }
             }
