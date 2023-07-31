@@ -1,6 +1,7 @@
 const { defineConfig } = require("cypress");
 const fs = require('fs-extra');
 const path = require('path');
+const cucumber = require('cypress-cucumber-preprocessor').default
 
 
 //copied from https://docs.cypress.io/api/plugins/configuration-api#Switch-between-multiple-configuration-files
@@ -18,6 +19,7 @@ module.exports = defineConfig({
   projectId: 'zq7k1d',
   e2e: {
     setupNodeEvents(on, config) {
+      on('file:preprocessor', cucumber());
       // implement node event listeners here
       const file = config.env.configFile || '' //changed
 
@@ -50,7 +52,5 @@ module.exports = defineConfig({
 
     },
     experimentalStudio: true
-    
-    
   },
 });
